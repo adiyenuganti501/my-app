@@ -1,0 +1,12 @@
+.Header_part{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-auto-rows: minmax(200px,auto);
+    position: static;
+	grid-gap: 3px;
+}
+
+.Header_body>h3{
+    display: grid;
+    grid-template-columns: 50% 50%  ;
+}

@@ -1,0 +1,25 @@
+
+li{
+    width: 600px;
+    margin: 0px auto;
+    color:gold !important;
+    text-align: left;
+    
+  
+  }
+  button{
+    background-color: red;
+    color:white;
+    padding: 7px;
+    border-radius: 12px;  
+  
+  
+  }
+  
+  input[type=submit]{
+    color:green;
+    background: yellowgreen;
+    padding: 7px;
+    border-radius: 12px;  
+  
+  }

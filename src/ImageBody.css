@@ -1,0 +1,24 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-auto-rows: minmax(200px,auto);
+    position: static;
+	grid-gap: 3px;
+        
+}
+
+.container img{
+ 
+
+    display: grid;
+    grid-auto-rows: minmax(250px,auto);
+
+
+
+    background-color: blue;
+    
+    height: 250px;
+    width: 300px;
+    border: 2px solid blue;
+}
+

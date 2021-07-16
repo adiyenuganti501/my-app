@@ -1,0 +1,42 @@
+
+.nav_bar{
+
+    display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    grid-auto-columns: minmax(200px,auto); 
+
+    grid-auto-rows: minmax(50px,auto);
+
+    background-color: blue;
+ 
+  
+
+     
+  }
+   li{
+    display: grid;
+  
+        grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+        grid-auto-rows: minmax(30px,auto);
+        grid-auto-columns: minmax(200px,auto); 
+        color:red;
+        list-style-type: none;
+        margin: 0;
+        padding: 20px;
+        text-align: right;
+        align-items: center;
+        padding: 20px;
+       
+    }
+  
+ /* li{
+    list-style: none;
+   text-align: right;
+   color:white;
+  } */
+
+  a{
+      text-decoration:none
+  }
+
+  
