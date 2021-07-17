@@ -1,6 +1,6 @@
 import React ,{useState} from 'react';
 import {BrowserRouter as Router ,Route, Link } from "react-router-dom" ;
-import './App.css';
+//import './App.css';
 import MainTodo from './MainTodo';
 import FoodOrder from './FoodOrder';
 import NavBar from './NavBar'

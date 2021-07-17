@@ -1,12 +1,12 @@
-.Header_part{
+.wrapper_body{
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-auto-rows: minmax(200px,auto);
-    position: static;
-	grid-gap: 3px;
+    grid-template-columns: 50% 50%;
+    margin: 50px auto;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
 }
 
-.Header_body>h3{
-    display: grid;
-    grid-template-columns: 50% 50%  ;
+.wrapper_body > div {
+    color: green;
 }

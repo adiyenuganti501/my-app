@@ -1,23 +1,46 @@
-import React from "react"
-import styles from './Movies.module.scss'
+import React, {useState } from "react"
+//import './Movies.module.scss';
+import styles from './Movies.css'
+import MoviesList from "./MoviesList";
+export const API_KEY = "a9118a3a";
 
 
-const Movies =()=>{
 
-    return(
+const Movies = () => {
+    const [search, setSearch] = useState('');
+    const [movies, setMovies] = useState([]);
+
+
+
+    const changeHandlerFun = (e) => {
+
+        setSearch(e.target.value);
+
+        //console.log(search);
+
+    }
+
+    const subsearch = async (e) => {
+        e.preventDefault();
+
+        const responce = await fetch(`https://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`)
+        const data = await responce.json();
+        setMovies(data);
+        console.log(data);
+    }
+
+
+    return (
         <React.Fragment>
-           
-            <header className="Header_part">
+            <div className="wrapper_body">
+                <div className="app_name">
+                    <h2>Movies Search App</h2>
+                </div>
 
-             <div>
-          <h3 className="Header_body">hello</h3>
+                <div className="search_box">   <form onSubmit={subsearch}> <input type="text" placeholder="Search Movie " value={search} onChange={changeHandlerFun} /> <input type="submit" value="Search" />  </form>  </div>
 
-             </div>
-             <div   className="Header_body">
-         <h3> hii</h3>
-             </div>
-
-            </header>
+            </div>
+           <MoviesList movies={movies} />
         </React.Fragment>
     )
 }

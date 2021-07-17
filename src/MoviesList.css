@@ -1,0 +1,18 @@
+.movies_list{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+   
+    margin: 20px;
+    text-align: center;
+    align-content: center;
+    grid-auto-rows: minmax(150px,auto);
+
+}
+
+.movies_list>.movies_body{
+    color: white;
+  border: 3px;
+  grid-auto-rows: minmax(250px,auto);
+  background-color: gray;
+  margin:  5px;
+}
