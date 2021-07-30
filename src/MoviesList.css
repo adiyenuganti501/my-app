@@ -10,9 +10,23 @@
 }
 
 .movies_list>.movies_body{
-    color: white;
+   
   border: 3px;
-  grid-auto-rows: minmax(250px,auto);
-  background-color: gray;
+  
   margin:  5px;
+}
+.movies_list>.movies_body:hover{
+
+ 
+  border-radius: 30px;
+  
+  border: 5px solid white;
+}
+
+img{
+ 
+   border-radius: 30px;
+  height: 350px;
+  width: 250px;
+  border: 5px solid royalblue;
 }

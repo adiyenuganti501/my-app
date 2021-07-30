@@ -1,0 +1,18 @@
+form{
+    width: 50%;
+    margin: 0px auto;
+  
+}
+
+.Form_style{
+    height: 35px;
+}
+table{
+    font-family: arial, sans-serif;
+   
+}
+td{
+    width: 150px;
+    text-align: left;
+    padding: 8px;
+}

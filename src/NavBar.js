@@ -11,6 +11,7 @@ const NavBar =()=>{
                     <Link to="Gallery" className="three">  <li>Image</li></Link>
                      <Link to="Foodorder" className="two"> <li>Food Order</li></Link>
                      <Link to="Movies" className="three">  <li>Movies</li></Link>
+                     <Link to="Form" className="three">  <li>FormValidation</li></Link>
                     
                 
              </div>
