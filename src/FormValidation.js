@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './FormValidation.css'
+import { Button, Modal } from 'react-bootstrap';
 
 let formElement = [{
   label: "Name",
@@ -16,6 +17,8 @@ let formElement = [{
 
 const FormValidation = () => {
 
+  const [show, setShow] = useState(false);
+
   const [formData, setFormData] = useState({});
 
   const changeHandler = (value, key) => {
@@ -24,7 +27,16 @@ const FormValidation = () => {
 
 
   const submit = () => {
-    alert(JSON.stringify(formData))
+    alert(JSON.stringify(formData));
+
+  }
+
+  const openModal = () => {
+
+    setShow(true);
+  }
+  const closeModal = () => {
+    setShow(false)
   }
   return (
     <React.Fragment>
@@ -33,24 +45,39 @@ const FormValidation = () => {
 
       <form>
         {formElement.map((elements) => {
-          return                 <table>
-          <div>
-          <label>
-           <tr>  <td> <p>{elements.label}</p> </td> <td>:</td>   <td>  <input value={formData[elements.key]} 
-              className="Form_style"
-                onChange={(e) => {
-                  changeHandler(e.target.value, elements.key)
-                }} /> </td> </tr>
-            
-              
-          
-            </label>
+          return <table>
+            <div>
+              <label>
+                <tr>  <td> <p>{elements.label}</p> </td> <td>:</td>   <td>  <input value={formData[elements.key]}
+                  className="Form_style"
+                  onChange={(e) => {
+                    changeHandler(e.target.value, elements.key)
+                  }} /> </td> </tr>
 
-          </div> </table>
+
+
+              </label>
+
+            </div> </table>
         })}
         <br></br>
         <button onClick={(e) => { e.preventDefault(); submit() }} > Submit</button>
       </form>
+      <div>
+        <button onClick={openModal}>Open Modal</button>
+        <Modal show={show}>
+          <Modal.Header closeButton onClick={closeModal}>
+            Hello Modal Header
+          </Modal.Header>
+          <Modal.Body>
+            <h4>{JSON.stringify(formData[1])}</h4>
+          </Modal.Body>
+          <Modal.Footer>
+
+            <Button onClick={closeModal}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
 
     </React.Fragment>
   )

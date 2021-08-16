@@ -13,21 +13,22 @@ const Gallery = () => {
     }
 
     const submitHandler = (e) => {
-
         e.preventDefault();
-        fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${search}&per_page=24&format=json&nojsoncallback=1`).then(
-            result => result.json().then(
+        if (search)
 
-                res => {
-                    setData(res.photos.photo)
+            fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&tags=${search}&per_page=24&format=json&nojsoncallback=1`).then(
+                result => result.json().then(
+
+                    res => {
+                        setData(res.photos.photo)
+                    }
+                )
+
+            ).catch(
+                error => {
+                    throw (error);
                 }
             )
-
-        ).catch(
-            error => {
-                throw (error);
-            }
-        )
         console.log(search);
 
     }

@@ -20,8 +20,8 @@
     color: red;
     background-color: white;
     grid-auto-rows: minmax(30px,auto);
-    padding: 10px;
-    margin-right: 60px;
+  
+    margin-right: 50px;
     border-radius: 5px;
     
 }
@@ -29,6 +29,5 @@
 input[type=text]{
 
     height: 25px;
- border: none;
-   outline: none;
+
 }

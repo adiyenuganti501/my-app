@@ -1,8 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './MoviesList.css'
+
+// import Axios from "axios";
+//import { API_KEY } from "./Movies";
+import MovieInfo from './MovieInfo'
+
 
 
 const MoviesList = ({ movies }) => {
+    const [show, setShow] = useState(false);
+    const [movieInfo, setMovieInfo] = useState();
+
+    const closeModal = () => {
+        setShow(false)
+    }
+    const openModal = () => {
+
+        setShow(true);
+        setMovieInfo()
+
+    }
+
+
+    // useEffect(()=>{
+    //     Axios.get(`https://www.omdbapi.com/?i=${selectedMovie}&apikey=${API_KEY}`,
+    //     ).then((responce)=>setMovieInfo(responce.data));
+    // },[movies]);
 
     return (
         <React.Fragment>
@@ -13,7 +36,7 @@ const MoviesList = ({ movies }) => {
 
                     return (
                         <div key={index} className="movies_body">
-                            <img src={list.Poster} />
+                            <a onClick={() => (openModal())} >     <img src={list.Poster} /> </a>
                             <h3>{list.Title}</h3>
                             <h4>{list.Year}</h4>
                             <h5>{list.Type}</h5>
@@ -25,12 +48,12 @@ const MoviesList = ({ movies }) => {
                 })
 
                 }
-
+                <MovieInfo show={show} closeModal={closeModal} />
 
 
             </div>
 
-           
+
         </React.Fragment>
     )
 
