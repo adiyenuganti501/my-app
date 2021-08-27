@@ -8,7 +8,7 @@ class Footer extends  React.Component{
 
             <React.Fragment>
                 <div className="container">
-                <h5> Footer Page</h5>
+                <h6> Footer Page</h6>
                 </div>
             </React.Fragment>
         )
