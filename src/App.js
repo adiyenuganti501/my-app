@@ -7,6 +7,7 @@ import NavBar from './NavBar'
 import Gallery from './Gallery';
 import Movies from './Movies';
 import FormValidation from './FormValidation'
+import Footer from './Footer';
 
 function App() {
   
@@ -24,9 +25,8 @@ function App() {
         <Route    path="/Form"  component={FormValidation} />
       </switch>
 
-      
-        
       </Router>
+      <Footer/>
     </div>
   );
 }

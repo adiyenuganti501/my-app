@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 //import './Movies.module.scss';
 import Spinner from 'react-bootstrap/Spinner'
 import styles from './Movies.css'
 import MoviesList from "./MoviesList";
+import JsonUsers from "./JsonUsers";
 export const API_KEY = "a9118a3a";
 
 
@@ -68,6 +69,8 @@ const Movies = () => {
                         <p>{error}</p>  
             {showloader ? <div className="spinner"><Spinner animation="border" /> </div> : <MoviesList movies={movies} />}
 
+            <JsonUsers/>
+               
         </React.Fragment>
     )
 }
