@@ -26,6 +26,8 @@ const Gallery = () => {
 
             ).catch(
                 error => {
+                    
+
                     throw (error);
                 }
             )

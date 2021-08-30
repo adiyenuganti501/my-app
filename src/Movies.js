@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 //import './Movies.module.scss';
 import Spinner from 'react-bootstrap/Spinner'
 import styles from './Movies.css'
@@ -8,14 +8,16 @@ export const API_KEY = "a9118a3a";
 
 const Movies = () => {
     const [search, setSearch] = useState('');
-
+    const [error, setError] = useState("");
     const [movies, setMovies] = useState([]);
+    const [showloader, setShowloader] = useState(false);
 
 
 
     const changeHandlerFun = (e) => {
 
         setSearch(e.target.value);
+
 
         //console.log(search);
 
@@ -27,18 +29,19 @@ const Movies = () => {
     }
 
     const subsearch = async (e) => {
-
+        setShowloader(true);
         e.preventDefault();
         if (search || search.length > 0) {
             const responce = await fetch(`https://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`)
-            const data = await responce.json();
-            setMovies(data.Search);
-            console.log(data.Search);
+            const data = await responce?.json();
+            data?.Search ? setMovies(data.Search) : setMovies([])
+            data?.Error ? setError(data.Error) : setError("");
         } else {
+
             setMovies([])
         }
 
-
+        setShowloader(false)
 
     }
 
@@ -55,13 +58,14 @@ const Movies = () => {
                         <input type="text" placeholder="Search Movie " value={search}
                             onChange={changeHandlerFun} />
                         <input type="submit" value="Search" />
+
                         <button onClick={clearFun}>  clear</button>
                     </form>
                 </div>
 
             </div>
-
-            {movies.length >= 1 ? <MoviesList movies={movies} /> : <Spinner animation="border" />}
+            {error}
+            {showloader ? <Spinner animation="border" /> : <MoviesList movies={movies} />}
 
         </React.Fragment>
     )

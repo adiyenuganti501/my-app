@@ -31,8 +31,8 @@ const MoviesList = ({ movies }) => {
         <React.Fragment>
 
             <div className="movies_list">
-
-                {movies.map((list, index) => {
+                    
+                { movies && movies.length>0 && movies.map((list, index) => {
 
                     return (
                         <div key={index} className="movies_body">
