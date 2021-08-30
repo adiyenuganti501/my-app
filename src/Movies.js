@@ -26,6 +26,7 @@ const Movies = () => {
     const clearFun = () => {
 
         setSearch("");
+        setError("")
     }
 
     const subsearch = async (e) => {
@@ -64,8 +65,8 @@ const Movies = () => {
                 </div>
 
             </div>
-            {error}
-            {showloader ? <Spinner animation="border" /> : <MoviesList movies={movies} />}
+                        <p>{error}</p>  
+            {showloader ? <div className="spinner"><Spinner animation="border" /> </div> : <MoviesList movies={movies} />}
 
         </React.Fragment>
     )

@@ -31,3 +31,12 @@ input[type=text]{
     height: 25px;
 
 }
+
+p{
+    text-align: center;
+    color: red;
+}
+.spinner{
+    text-align: center;
+    color:royalblue;
+}
