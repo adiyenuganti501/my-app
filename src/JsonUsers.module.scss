@@ -1,0 +1,18 @@
+.content{
+   
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 10px;
+   
+}
+.content_body{
+    text-align: center;
+    background-color: blue;
+   
+   
+}
+
+.content_body  p{
+    color:white;
+    background-color: blue;
+}

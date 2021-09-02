@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { Card } from 'react-bootstrap';
+import Style from './JsonUsers.module.scss'
+
 
 const JsonUsers = () => {
     const [users, setUsers] = useState([]);
@@ -20,16 +23,26 @@ const JsonUsers = () => {
 
     return (
         <React.Fragment>
+            <div className={Style.content}>
+                {users && users.length > 0 && users.map((user, index) => {
+                    return (
 
-        {users && users.length>0 && users.map((user,index)=>{
-            return (
-                <div>
-                        <h2>{user.name}</h2>
+                        <div className={Style.content_body}>
+                            <Card>
+                                <Card.Header>{user.name}</Card.Header>
+                                <Card.Body>
+                                    <Card.Title>{user.username}</Card.Title>
+                                    <Card.Text>
+                                        <p>{user.email} </p>
+                                    </Card.Text>
+                                </Card.Body>
+                            </Card>
 
-                </div>
-            )
-        })}
 
+                        </div>
+                    )
+                })}
+            </div>
             {console.log(users)}
         </React.Fragment>
     )
